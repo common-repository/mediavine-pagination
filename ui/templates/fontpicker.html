@@ -1,0 +1,61 @@
+<script type="text/template" id="mediavine-ui-fontpicker">
+    <div class="input-controls">
+        <select value="<%= value %>"
+                name="<%= name %>"
+                class="add-controls border-right select2 mv-select"
+                style="width:100%">
+            <option value="inherit" style="font-family: inherit;">Theme Default</option>
+            <option value="Arial, Helvetica, sans-serif" style="font-family: Arial, Arial, Helvetica, sans-serif;">
+                Arial
+            </option>
+            <option value="Arial Black, Arial Black, Gadget, sans-serif"
+                    style="font-family: Arial Black, Arial Black, Gadget, sans-serif;">
+                Arial Black
+            </option>
+            <option value="Comic Sans MS, Comic Sans MS5, cursive"
+                    style="font-family: Comic Sans MS, Comic Sans MS5, cursive">
+                Comic Sans
+            </option>
+            <option value="Courier New, Courier New, Courier6, monospace"
+                    style="font-family: Courier New, Courier New, Courier6, monospace;">
+                Courier New
+            </option>
+            <option value="Georgia1, Georgia, serif	" style="font-family: Georgia1, Georgia, serif;">
+                Georgia
+            </option>
+            <option value="Impact, Impact5, Charcoal6, sans-serif"
+                    style="font-family: Impact, Impact5, Charcoal6, sans-serif;">
+                Impact
+            </option>
+            <option value="Lucida Console, Monaco5, monospace" style="font-family: Lucida Console, Monaco5, monospace;">
+                Lucida Console
+            </option>
+            <option value="Tahoma, Geneva, sans-serif" style="font-family: Tahoma, Geneva, sans-serif;">
+                Tahoma
+            </option>
+            <option value="Times New Roman, Times, serif" style="font-family: Times New Roman, Times, serif;">
+                Times New Roman
+            </option>
+            <option value="Trebuchet MS1, Helvetica, sans-serif"
+                    style="font-family: Trebuchet MS1, Helvetica, sans-serif;">
+                Trebuchet
+            </option>
+            <option value="Verdana, Verdana, Geneva, sans-serif"
+                    style="font-family: Verdana, Verdana, Geneva, sans-serif;">
+                Verdana
+            </option>
+        </select>
+        <input type="hidden"
+               value="<%= modValue %>"
+               name="<%= modName %>"/>
+        <span data-toggle="isBold" class="input-control control-toggle border-right bold <%= isBoldClass %>">
+                B
+            </span><span data-toggle="isItalic"
+                         class="input-control control-toggle border-right italic <%= isItalicClass %>">
+                i
+            </span><span data-toggle="isUnderline"
+                         class="input-control control-toggle underline <%= isUnderlineClass %>">
+                u
+            </span>
+    </div>
+</script>

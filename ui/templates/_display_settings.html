@@ -1,0 +1,72 @@
+<script type="text/template" id="_display_settings">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <fieldset class="radio">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <input type="radio"
+                                   data-binding="model.display_setting"
+                                   data-group="display_options"
+                                   name="<?php echo $setting_prefix; ?>display_setting"
+                                   id="rdo_display_next"
+                                   value="next"
+                            <% model.display_setting === 'next' ? print('checked') :'' %>/>
+                            <label for="rdo_display_next">Next Button</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="radio"
+                                   data-binding="model.display_setting"
+                                   data-group="display_options"
+                                   name="<?php echo $setting_prefix; ?>display_setting"
+                                   id="rdo_display_num"
+                                   value="number"
+                            <% model.display_setting === 'number' ? print('checked') :'' %>/>
+
+                            <label for="rdo_display_num">Page Numbers</label>
+                        </div>
+                        <div class="col-xs-3">
+
+                            <input type="radio"
+                                   data-binding="model.display_setting"
+                                   data-group="display_options"
+                                   name="<?php echo $setting_prefix; ?>display_setting"
+                                   id="rdo_display_next_and_num"
+                                   value="next_and_number"
+                            <% model.display_setting === 'next_and_number' ? print('checked') :'' %>/>
+                            <label for="rdo_display_next_and_num">Both</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <% if (this.model.showNextButton()) { %>
+    <div class="row">
+        <div class="col-xs-10">
+            <label>Next Button Text</label>
+            <input type="text"
+                   data-binding="model.next_button_text"
+                   value="<%= model.next_button_text %>"
+                   id="<?php echo $setting_prefix; ?>next_button_text"
+                   name="<?php echo $setting_prefix; ?>next_button_text"/>
+        </div>
+    </div>
+    <% } %>
+    <% if (this.model.showPageNumbers()) { %>
+    <div class="row">
+        <div class="col-xs-10">
+            <label>Page Numbers</label>
+            <div class="mediavine-pagination tip">
+                You can use <strong>{pagenumber}</strong> to use the number for the page
+            </div>
+            <input type="text"
+                   data-binding="model.page_number_text"
+                   value="<%= model.page_number_text %>"
+                   id="<?php echo $setting_prefix; ?>page_number_text"
+                   name="<?php echo $setting_prefix; ?>page_number_text"
+            />
+        </div>
+    </div>
+    <% } %>
+</script>

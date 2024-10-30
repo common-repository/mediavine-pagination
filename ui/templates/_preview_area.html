@@ -1,0 +1,87 @@
+<script type="text/template" id="_preview_area">
+    <div class="text">
+        <style>
+            .mediavine-preview {
+                background: #ffffff;
+                border: 1px solid #000000;
+                width: 100%;
+                min-height: 300px;
+                text-align: center;
+            }
+
+            .mediavine-preview a{
+                background: <%= model.button_background_color %>;
+                color: <%= model.button_font_color %>;
+                border-width: <%= model.button_border_size %>px;
+                border-color: <%= model.button_border_color %>;
+                border-style: <%= model.button_border_style %>;
+                font-size: <%= model.button_font_size %>px;
+                margin-bottom: <%= model.button_font_size %>px;
+                padding: 5px <%= this.model.getButtonMargin() %>px;
+                border-radius: 5px;
+                text-align: center;
+                display: inline-block;
+                text-decoration: none;
+                <%= this.model.getButtonFontMod() %>
+            }
+
+            .mediavine-preview span: {
+                text-decoration: none;
+                font-size: <%= model.button_font_size %>px;
+            }
+
+            .mediavine-preview a:hover {
+                background: <%= this.model.hoverbg() %>;
+                text-decoration: none;
+            }
+
+            .mediavine-preview .preview-container {
+                display: block;
+                width: 85%;
+                margin: 00 auto;
+            }
+
+            .page-numbers a:first-of-type {
+                margin-left: 0px;
+            }
+
+            .mediavine-preview a, .mediavine-preview span {
+                margin-left: <%= this.model.getButtonMargin() %>px;
+                margin-right: <%= this.model.getButtonMargin() %>px;
+                white-space: nowrap;
+                display: inline-block;
+            }
+
+            .mediavine-preview .nextpage a{
+                display: block;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 12px 0px;
+            }
+
+            .mediavine-preview h4.teaser-text {
+                color: <%= model.teaser_font_color %>;
+                font-size: <%= model.teaser_font_size %>px;
+                font-color: <%= model.teaser_font_color %>;
+                font-family: <%= model.teaser_font_style %>;
+                <%= this.model.getTeaserFontMod() %>
+            }
+        </style>
+    </div>
+    <div class="mediavine-preview">
+        <h4 class="teaser-text"><%= model.teaser_text %></h4>
+        <% if (model.display_setting !== 'number'){ %>
+            <div class="nextpage preview-container">
+                <a href="#"><span><%= model.next_button_text %></span></a>
+            </div>
+        <% } %>
+        <% if (model.display_setting !== 'next'){ %>
+        <div class="preview-container page-numbers">
+            <a href="#"><span><%= this.model.getButton('1') %></span></a>
+            <a href="#"><span><%= this.model.getButton('2') %></span></a>
+            <a href="#"><span><%= this.model.getButton('3') %></span></a>
+        </div>
+        <% } %>
+    </div>
+</script>

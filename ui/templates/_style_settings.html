@@ -1,0 +1,175 @@
+<script type="text/template" id="_style_settings">
+    <style>
+        .btn {
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: <%= model.button_font_color %>;
+            background-color: <%= model.button_background_color %>;
+            border-color: <%= model.button_border_color %>;
+            border-style: <%= model.button_border_style %>;
+            font-family: <%= model.button_font_style %>;
+            text-decoration: none;
+            <%= this.model.getButtonFontMod() %>
+        }
+        .btn:hover {
+            background: <%= this.model.hoverbg() %>;
+            text-decoration: none;
+        }
+        .teaser-text {
+            color: <%= model.teaser_font_color %>;
+            font-family: <%= model.teaser_font_style %>;
+            <%= this.model.getTeaserFontMod() %>
+        }
+    </style>
+    <style>
+        .preview-section {
+            display: inline-block;
+            vertical-align: middle;
+            background: #ffffff;
+            text-align: center;
+            border: 1px solid #333;
+            padding: 15px 5px;
+            width: 100%;
+        }
+
+        .teaser-text {
+            display: block;
+        }
+
+        .text-small {
+            font-size: 14px;
+        }
+
+        .text-medium {
+            font-size: 18px;
+        }
+
+        .text-large {
+            font-size: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .btn.btn-next {
+            display: block;
+            margin: 00 auto;
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        .btn-large {
+            font-size: 24px;
+            padding: 10px 25px;
+            border-width: 3px;
+        }
+
+        .btn-medium {
+            font-size: 20px;
+            padding: 5px 15px;
+            border-width: 2px;
+        }
+
+        .btn-small {
+            font-size: 16px;
+            padding: 5px 10px;
+            border-width: 1px;
+        }
+
+        label.prev-wrapper {
+            display: inline-block;
+            width: 95%;
+        }
+
+        label.prev-wrapper > span {
+            display: block;
+        }
+    </style>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <input type="radio"
+                       id="prev1"
+                       data-binding="model.display_style"
+                       data-group="style_options"
+                       name="<?php echo $setting_prefix; ?>display_style"
+                       value="large"
+                <% model.display_style === 'large' ? print('checked') :'' %>
+                />
+                <label for="prev1" class="prev-wrapper">
+                    <span>Large</span>
+                    <div class="preview-section">
+                        <span class="teaser-text text-large"><%= model.teaser_text %></span>
+                        <% if (this.model.showNextButton()){ %>
+                        <a class="btn btn-next btn-large">
+                            Next
+                        </a>
+                        <% } %>
+                        <% if (this.model.showPageNumbers()) { %>
+                        <a class="btn btn-page btn-large"><%= this.model.getButton(1) %></a>
+                        <a class="btn btn-page btn-large"><%= this.model.getButton(2) %></a>
+                        <a class="btn btn-page btn-large"><%= this.model.getButton(3) %></a>
+                        <% } %>
+                    </div>
+                </label>
+            </div>
+
+            <div class="box">
+                <input type="radio"
+                       id="prev2"
+                       data-binding="model.display_style"
+                       data-group="style_options"
+                       name="<?php echo $setting_prefix; ?>display_style"
+                       value="medium"
+                <% model.display_style === 'medium' ? print('checked') :'' %>
+                />
+                <label for="prev2" class="prev-wrapper">
+                    <span>Medium</span>
+                    <div class="preview-section">
+                        <span class="teaser-text text-medium"><%= model.teaser_text %></span>
+                        <% if (this.model.showNextButton()){ %>
+                        <a class="btn btn-next  btn-medium">
+                            Next
+                        </a>
+                        <% } %>
+                        <% if (this.model.showPageNumbers()) { %>
+                        <a class="btn btn-page btn-medium"><%= this.model.getButton(1) %></a>
+                        <a class="btn btn-page btn-medium"><%= this.model.getButton(2) %></a>
+                        <a class="btn btn-page btn-medium"><%= this.model.getButton(3) %></a>
+                        <% } %>
+                    </div>
+                </label>
+            </div>
+
+            <div class="box">
+                <input type="radio"
+                       id="prev3"
+                       data-binding="model.display_style"
+                       data-group="style_options"
+                       name="<?php echo $setting_prefix; ?>display_style"
+                       value="small"
+                <% model.display_style === 'small' ? print('checked') :'' %>
+                />
+                <label for="prev3" class="prev-wrapper">
+                    <span>Small</span>
+                    <div class="preview-section">
+                        <span class="teaser-text text-small"><%= model.teaser_text %></span>
+                        <% if (this.model.showNextButton()){ %>
+                        <a class="btn btn-next  btn-small">
+                            Next
+                        </a>
+                        <% } %>
+                        <% if (this.model.showPageNumbers()) { %>
+                        <a class="btn btn-page btn-small"><%= this.model.getButton(1) %></a>
+                        <a class="btn btn-page btn-small"><%= this.model.getButton(2) %></a>
+                        <a class="btn btn-page btn-small"><%= this.model.getButton(3) %></a>
+                        <% } %>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>
+</script>
